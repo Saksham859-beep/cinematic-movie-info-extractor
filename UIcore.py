@@ -1,7 +1,10 @@
 import os
 import streamlit as st
 from dotenv import load_dotenv
-
+from langchain_mistralai import ChatMistralAI
+import streamlit as st
+import streamlit.components.v1 as components
+from langchain_core.prompts import ChatPromptTemplate
 load_dotenv()
 
 api_key = st.secrets.get(
@@ -13,10 +16,6 @@ model = ChatMistralAI(
     model="mistral-small-latest",
     api_key=api_key
 )
-import streamlit as st
-import streamlit.components.v1 as components
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_mistralai import ChatMistralAI
 
 st.set_page_config(
     page_title="Movie Info Extractor",
